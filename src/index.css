@@ -1,0 +1,8 @@
+:root {
+  --border: oklch(88.107% 0.1926 112.031);
+}
+
+.diagonal-bg {
+  @apply bg-[image:repeating-linear-gradient(315deg,var(--border)_0,var(--border)_1px,transparent_1px,transparent_50%)] bg-[size:8px_8px];
+}
+

@@ -17,7 +17,7 @@ export default function NavBar() {
         </div>
             {isOpen && (
                 <div className="absolute bg-white w-90 h-auto flex flex-col items-center rounded-2xl mt-2 ">
-                    <Link to='../page/About.jsx'>acerca</Link>
+                    <Link to='about'>acerca</Link>
                 </div>
             )}
         </div>
