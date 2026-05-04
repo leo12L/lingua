@@ -5,7 +5,7 @@ export default function Button({
     variant=""
 }){
     return  (
-    <button type={type} onClick={onClick} className={`${variant}`} >
+    <button  type={type} onClick={onClick} className={`${variant}`} >
         {children}
     </button>
     );

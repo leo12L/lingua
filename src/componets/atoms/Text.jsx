@@ -18,7 +18,7 @@ export default function Text() {
                 Creado solo para ti
             </p>
 
-            <Link to="/login" className="h-10 w-30 flex justify-center items-center text-center ml-25 mt-10 rounded-3xl bg-amber-400">Registrarse</Link>
+            <Link to="/newaccount" className="h-10 w-30 flex justify-center items-center text-center ml-25 mt-10 rounded-3xl bg-amber-400">Registrarse</Link>
 
         </div>
     )
