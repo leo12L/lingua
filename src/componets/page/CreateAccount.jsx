@@ -1,12 +1,22 @@
+import axios from "axios";
 import AddUserForm from "../organis/AddUserForm";
+
 
 export default function CreateAccount() {
 
-    const register = async (datos) => {
+    const register = async (datos) =>{
         console.log()
-        const [name, lastName, email, password] = datos
+        const {name, lastName, email, password } = datos
         try {
-            console.log('Usuario creado:', { name, lastName, email, password });
+            const response = await axios.post("http://localhost:3015/users", 
+                {
+                    name,
+                    lastName,
+                    email,
+                    password
+                }
+            )
+            console.log('Usuario creado:', response.data);
         } catch (error) {
             console.error('Error al registrar:', error);
         }    
