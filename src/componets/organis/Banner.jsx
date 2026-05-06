@@ -27,7 +27,7 @@ export default function Banner() {
                     </label>
                     <br />
                     <br />
-                    <Link to='createAccount'>Hola</Link>
+                    <Link to='createAccount' className="bg-blue-100">Hola</Link>
                 </div>
 
             </div>

@@ -5,7 +5,7 @@ export default function Input({
 }) {
     return (<>
         <input
-            className="border-2 border-black h-10 w-60"
+            className="border-2 border-black h-12 w-60"
             value={value}
             onChange={onChange} 
             placeholder={placeholder} />
