@@ -5,23 +5,23 @@ import Button from "../atoms/Button"
 
 export default function AddUserForm({ onAdd }) {
     const [name, setName] = useState('')
-    const [lastName, setLastName] = useState('')
+    const [last_name, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const datos = [name, lastName, email, password]
+    const datos = { name, last_name, email, password }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        for (let i = 0; i < datos.length; i++) {
-            if (datos[i].trim() === '') return;
-        }
+        const todosLlenos = Object.values(datos).every(valor => valor.trim() !== '');
+        if (!todosLlenos) return;
         onAdd(datos)
         setName('');
         setLastName('');
         setEmail('');
         setPassword('');
     }
+
     return (
         <div className="border-2 border-amber-400 w-screen h-screen flex justify-center items-start  overflow-hidden ">
             <form onSubmit={handleSubmit} className="h-5/5 flex flex-col mt-20">
@@ -33,7 +33,7 @@ export default function AddUserForm({ onAdd }) {
                         placeholder="Nombre"
                     />
                     <Input
-                        value={lastName}
+                        value={last_name}
                         onChange={(e) => setLastName(e.target.value)}
                         placeholder="Apellido"
                     />
@@ -49,7 +49,7 @@ export default function AddUserForm({ onAdd }) {
                     />
 
                 </div>
-                    <Button type="submit"> Crear </Button>
+                <Button type="submit"> Crear </Button>
             </form>
         </div>
     )

@@ -1,30 +1,40 @@
 import axios from "axios";
 import AddUserForm from "../organis/AddUserForm";
+import { useNavigate } from 'react-router-dom';
+
 
 
 export default function CreateAccount() {
+    const navigate = useNavigate();
 
-    const register = async (datos) =>{
-        console.log()
-        const {name, lastName, email, password } = datos
+    const register = async (datos) => {
+        console.log(datos)
+        const { name, last_name, email, password } = datos
         try {
-            const response = await axios.post("http://localhost:3015/users", 
+            const response = await axios.post("http://localhost:3015/users",
                 {
                     name,
-                    lastName,
+                    last_name,
                     email,
                     password
                 }
             )
             console.log('Usuario creado:', response.data);
+            navigate('/profile')
         } catch (error) {
             console.error('Error al registrar:', error);
-        }    
-        console.log('Usuario actual:', {name, lastName, email, password});
+        }
+
     }
+    
+
 
 
     return (<>
-        <AddUserForm onAdd={register} />
+        <div>
+            <AddUserForm onAdd={register} />
+        </div>
+
+
     </>)
 }

@@ -7,8 +7,10 @@ export default function FirstView() {
         <>
             <Banner />
             
-            <div
-            className="h-100 border-2 border-amber-300" ></div>
+            <div className="h-100 ">
+
+                
+            </div>
             
         </>
     )
