@@ -23,10 +23,11 @@ export default function AddUserForm({ onAdd }) {
     }
 
     return (
-        <div className="border-2 border-amber-400 w-screen h-screen flex justify-center items-start  overflow-hidden ">
-            <form onSubmit={handleSubmit} className="h-5/5 flex flex-col mt-20">
-                <h1 className="flex justify-center">Crear cuenta</h1>
-                <div className="flex flex-col justify-around h-80 my-8 ">
+        <div className="w-screen h-screen flex justify-center items-start overflow-hidden">
+            <form onSubmit={handleSubmit} className=" bg-white rounded-2xl h-18/20 w-8/10 flex flex-col items-center pt-10 mt-10">
+                <h1 className="flex justify-center text-3xl">Crear cuenta</h1>
+                <label htmlFor="" className="text-sm">Aqui comienza tu camino de aprendizaje</label>
+                <div className="flex flex-col justify-around h-80 my-4 ">
                     <Input
                         value={name}
                         onChange={(e) => setName(e.target.value)}
@@ -50,6 +51,10 @@ export default function AddUserForm({ onAdd }) {
 
                 </div>
                 <Button type="submit"> Crear </Button>
+                <label htmlFor="">_______________ o ________________</label>
+                <label htmlFor="" className="text-sm m-2">Registrate con</label>
+                
+                <Button type="submit"> Google </Button>
             </form>
         </div>
     )

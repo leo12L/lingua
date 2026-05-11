@@ -20,19 +20,20 @@ export default function CreateAccount() {
                 }
             )
             console.log('Usuario creado:', response.data);
+            localStorage.setItem('token', response.data.token)
             navigate('/profile')
         } catch (error) {
             console.error('Error al registrar:', error);
         }
 
     }
-    
-
-
 
     return (<>
-        <div>
-            <AddUserForm onAdd={register} />
+        <div className="diagonal-bg">
+            
+                <AddUserForm onAdd={register} />
+          
+            
         </div>
 
 

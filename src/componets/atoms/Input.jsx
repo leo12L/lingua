@@ -3,6 +3,11 @@ export default function Input({
     onChange,
     placeholder = ""
 }) {
+
+    const style = {
+        primary:""
+    }
+    
     return (<>
         <input
             className="border-2 border-black h-12 w-60"
